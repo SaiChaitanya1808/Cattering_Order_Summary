@@ -1,92 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="te">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sri Durga Sai Catering</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>శ్రీ దుర్గా సాయి కేటరింగ్ - ఆర్డర్ ఫారం | Sri Durga Sai Catering - Order Form</title>
+    <link rel="stylesheet" href="style.css">   
 </head>
 <body>
-  <h1>Sri Durga Sai Catering</h1>
+    <div id="form" class="container page1 active">
+        <form id="myform">
+        <h1>శ్రీ దుర్గా సాయి కేటరింగ్ - ఆర్డర్ ఫారం | Sri Durga Sai Catering - Order Form</h1>
+        <div class="border">
+            <label for="name" class="form">పేరు/Name:</label>
+            <input type="text" class="input" id="name" name="name" placeholder="మీ పేరు | Your Name" required>
 
-  <!-- Step 1: Client Details -->
-  <div id="step1" class="section active">
-    <div class="form-container">
-      <h2>Client Details</h2>
-      <form id="clientForm">
-        <div class="form-group">
-          <label>Name</label>
-          <input type="text" id="name" required>
+            <label for="phone" class="form">ఫోన్ నంబర్/Phone Number:</label>
+            <input type="tel" class="input" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10);" maxlength="10" id="phone" name="phone" placeholder="మీ ఫోన్ నంబర్ | Your Phone Number" required>
+
+            <label for="event" class="form">ఈవెంట్ రకం/Event Type:</label>
+            <select id="event" name="event" required>
+                <option value="">ఎంచుకోండి | Select</option>
+                <option value="wedding">వివాహం | Wedding</option>
+                <option value="birthday">పుట్టినరోజు | Birthday</option>
+                <option value="corporate">కార్పొరేట్ ఈవెంట్ | Corporate Event</option>
+                <option value="other">ఇతర కారిక్రమాలు | Other Events</option>
+            </select>
+
+            <label for="date" class="form" data-english="(Event Date)">ఈవెంట్ తేదీ/Event Date:</label>
+            <input type="date" class="input" id="date" name="date" required>
+
+            <label for="time" class="form">ఈవెంట్ సమయం/Event Time:</label>
+            <input type="time" class="input" id="time" name="time" required>
+
+            <label for="guests" class="form">అతిథుల సంఖ్య/No Of People:</label>
+            <input type="number" class="input" id="guests" name="guests" placeholder="అతిథుల సంఖ్య | Number of Guests" required>
+
+            <label for="menu" class="form">మెనూ ప్రాధాన్యతలు/Additional Details:</label>
+            <textarea id="menu" class="input" name="menu" rows="4" placeholder="మీ మెనూ ప్రాధాన్యతలు లేదా ప్రత్యేక అవసరాలు | Your Menu Preferences or Special Requirements"></textarea>
+
+            <button type="submit">ఆర్డర్ సమర్పించు | Submit Order</button>
         </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input type="text" id="phone" required>
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input type="text" id="address" required>
-        </div>
-
-        <div class="form-group">
-          <label>No of People</label>
-          <input type="number" id="people" required>
-        </div>
-
-        <div class="form-group">
-          <label>Date</label>
-          <input type="date" id="date" required>
-        </div>
-
-        <div class="form-group">
-          <label>Time</label>
-          <input type="time" id="time" required>
-        </div>
-
-        <div class="form-group">
-          <label>Additional Information</label>
-          <textarea id="requests"></textarea>
-        </div>
-
-        <button type="submit">Next</button>
-      </form>
+        </form>
     </div>
-  </div>
-
-  <!-- Step 2: Menu Categories -->
-  <div id="step2" class="section">
-    <h2 style="text-align:center;">Choose Menu Items</h2>
-
-    <div class="category">
-      <h3>Starters</h3>
-      <label><input type="checkbox" value="Veg Manchurian"> Veg Manchurian</label><br>
-      <label><input type="checkbox" value="Chicken Manchurian"> Chicken Manchurian</label><br>
-      <label><input type="checkbox" value="Vada">Vada</label>
+    <div id="menupage" class="page2">
+            <h1 class="heading">Select You menu/మీ మెనూని ఎంచుకోండి</h1>
+            <div class="category">
+                <h2 class="h2">Sweets/స్వీట్స్</h2>
+                <label class="li"><input class="li" type="checkbox" value="Bread Halva"> Bread Halva/బ్రెడ్ హల్వా</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Paramannam/Ksheerannam/పరమన్నం/క్షీరాన్నం"> Paramannam/Ksheerannam/పరమన్నం/క్షీరాన్నం</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Carrot Halva"> Carrot Halva/క్యారెట్ హల్వా</label><br>
+                <label class="li"><input class="li" type="checkbox" value="DryFruit Halva"> DryFruit Halva/డ్రై ఫ్రూట్ హల్వా</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chakkarapongali"> Chakkara Pongali/చక్కర పొంగలి</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Ravva Kesari"> Ravva Kesari/రవ్వ కేసరి</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Semya Kesari"> Semya Kesari/సేమ్యా కేసరి</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Annavaram Prasadam"> Annavaram Prasadam/అన్నవరం ప్రసాదం</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Junnu"> Junnu/జున్ను</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Gulab Jam"> Gulab Jam/గులాబ్ జామ్</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Bobbattu"> Bobbattu/బొబ్బట్టు</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Jilebi/జిలేబి"> Jilebi/జిలేబి</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Kova Puuri"> Kova Puuri/కోవ పూరి</label><br>
+            </div>
+            <div class="category">
+                <h2 class="h2">Snack Items/స్నాక్స్</h2>
+                <label class="li"><input class="li" type="checkbox" value="Buuri/బూరి"> Buuri/బూరి</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Gaari/గారి"> Gaari/గారి</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mirapakay Bajji/మిరపకాయ బజ్జి"> Mirapakay Bajji/మిరపకాయ బజ్జి</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Aratikay Bajji/అరటికాయ బజ్జి"> Aratikay Bajji/అరటికాయ బజ్జి</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Vada/వడ"> Vada/వడ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Egg Bajji/ఎగ్ బజ్జి"> Egg Bajji/ఎగ్ బజ్జి</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Samosa/సమోసా"> Samosa/సమోసా</label><br>
+                <label class="li"><input class="li" type="checkbox" value="SweetCorn Samosa/స్వీట్ కార్న్ సమోసా"> SweetCorn Samosa/స్వీట్ కార్న్ సమోసా</label><br>
+                <label class="li"><input class="li" type="checkbox" value="SweetCorn Roll/స్వీట్ కార్న్ రోల్"> SweetCorn Roll/స్వీట్ కార్న్ రోల్</label><br>
+            </div>
+            <div class="category"> 
+                <h2 class="h2">Flavoured Rice Items/ఫ్లేవర్డ్ రైస్ ఐటమ్స్</h2>
+                <label class="li"><input class="li" type="checkbox" value="Pulihora/పులిహోర"> Pulihora/పులిహోర</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Tomato rice/టమాటో రైస్"> Tomato Rice/టమాటో రైస్</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Jeera Rice/జీరా రైస్"> Jeera Rice/జీరా రైస్</label><br>
+                <label class="li"><input class="li" type="checkbox" value="kichidi/ఖిచిడి"> kichidi/ఖిచిడి</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Lemon Rice/నిమ్మకాయ రైస్"> Lemon Rice/నిమ్మకాయ రైస్</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Kotthimeera Rice/కొత్తిమీర రైస్"> Kotthimeera Rice/కొత్తిమీర రైస్</label><br>   
+                <label class="li"><input class="li" type="checkbox" value="Veg FriedRice/వెజ్ ఫ్రైడ్ రైస్"> Veg FriedRice/వెజ్ ఫ్రైడ్ రైస్</label><br> 
+                <label class="li"><input class="li" type="checkbox" value="Bagara Rice/బగారా రైస్"> Bagara Rice/బగారా రైస్</label><br>            
+            </div>
+            <div class="category">
+                <h2 class="h2">Biryanis(Veg)/వెజ్ బిర్యానీస్</h2>
+                <label class="li"><input class="li" type="checkbox" value="Veg Dum Biryani/వెజ్ డమ్ బిర్యానీ"> Veg Dum Biryani/వెజ్ డమ్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mixed Veg Biryani/మిక్స్‌డ్ వెజ్ బిర్యానీ"> Mixed Veg Biryani/మిక్స్‌డ్ వెజ్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Panasakay Biryani/పనసకాయ బిర్యానీ"> Panasakay Biryani/పనసకాయ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Paneer Biryani/పనీర్ బిర్యానీ"> Paneer Biryani/పనీర్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mushroom Biryani/మష్రూమ్ బిర్యానీ"> Mushroom Biryani/మష్రూమ్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Baby Corn Biryanu/బేబీకార్న్ బిర్యానీ"> Baby Corn Biryani/బేబీకార్న్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Millmaker Biryani/మీల్మేకర్ బిర్యానీ"> Millmaker Biryani/మీల్మేకర్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Aloo Biryani/ఆలూ బిర్యానీ"> Aloo Biryani/ఆలూ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Veg Pulav/వెజ్ పులావ్"> Veg Pulav/వెజ్ పులావ్</label><br>
+            </div>
+            <div class="category">
+                <h2>Biryanis(Non-Veg)/నాన్-వెజ్ బిర్యానీస్</h2>
+                <label class="li"><input class="li" type="checkbox" value="Chicken Dum Biryani/చికెన్ డమ్ బిర్యానీ"> Chicken Dum Biryani/చికెన్ డమ్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mutton Dum Biryani/మటన్ డమ్ బిర్యానీ"> Mutton Dum Biryani/మటన్ డమ్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mixed Biryani/మిక్స్‌డ్ బిర్యానీ"> Mixed Biryani/మిక్స్‌డ్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chicken FryPiece Biryani/చికెన్ ఫ్రై పీస్ బిర్యానీ"> Chicken FryPiece Biryani/చికెన్ ఫ్రై పీస్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mutton FryPiece Biryani/మటన్ ఫ్రై పీస్ బిర్యానీ"> Mutton FryPiece Biryani/మటన్ ఫ్రై పీస్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chicken Pulav/చికెన్ పులావ్"> Chicken Pulav/చికెన్ పులావ్</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Prawns Biryani/ప్రాన్స్ బిర్యానీ"> Prawns Biryani/ప్రాన్స్ బిర్యానీ</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Egg Biryani/ఎగ్ బిర్యానీ"> Egg Biryani/ఎగ్ బిర్యానీ</label><br>
+            </div>
     </div>
-
-    <div class="category">
-      <h3>Main Course</h3>
-      <label><input type="checkbox" value="Veg Biryani"> Veg Biryani</label><br>
-      <label><input type="checkbox" value="Chicken Biryani"> Chicken Biryani</label><br>
-      <label><input type="checkbox" value="Veg friedrice">Veg friedrice</label>
-    </div>
-
-    <div class="category">
-      <h3>Desserts</h3>
-      <label><input type="checkbox" value="Gulab Jamun"> Gulab Jamun</label><br>
-      <label><input type="checkbox" value="Ice Cream"> Ice Cream</label><br>
-      <label><input type="checkbox" value="Bread halva"> Bread Halva</label>
-    </div>
-
-    <button onclick="submitOrder()">Submit</button>
-  </div>
-
-  <!-- Step 3: Order Summary -->
-  <div id="step3" class="section">
-    <h2 style="text-align:center;">Order Summary</h2>
-    <div id="summary"></div>
-  </div>
+     <script src="script.js"></script>
 </body>
 </html>

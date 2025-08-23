@@ -75,7 +75,7 @@
             color: #666;
             margin-left: 10px;
         }
-        .page1,.page2{
+        .page{
             display: none;
         }
         .active{
@@ -103,6 +103,10 @@
         .h2{
             font-weight: bolder;
             font-size: 30px;
+        }
+        .Summary{
+            font-size: larger;
+            display: grid;
         }
         @media (max-width: 800px) {
             .container {

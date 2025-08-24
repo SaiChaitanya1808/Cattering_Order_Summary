@@ -39,12 +39,6 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
   document.querySelectorAll("input[type='checkbox']:checked").forEach(cb=>{
     selected.push(cb.value);
   });
-
-  let sure = confirm("Are you sure? Do you want to submit?");
-  if(!sure){
-    return;
-  }
-
   orderData.menu = selected;
   
   let summaryDiv = document.getElementById("summary");
@@ -72,3 +66,38 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
 
   gotopage(3);
 });
+document.getElementById("menuSearch").addEventListener("input", function () {
+  let filter = this.value.toLowerCase().trim();
+  let categories = document.querySelectorAll(".category");
+
+  if (filter) {
+    categories.forEach(cat => {
+      let labels = cat.querySelectorAll("label");
+      let catTitle = cat.querySelector("h2,h3,h4")?.textContent.toLowerCase() || "";
+      let hasMatch = false;
+
+      labels.forEach(label => {
+        let text = label.textContent.toLowerCase();
+        if (text.includes(filter)) {
+          label.style.display = ""; 
+          hasMatch = true;
+        } else {
+          label.style.display = "none";
+        }
+      });
+
+      if (catTitle.includes(filter)) {
+        labels.forEach(l => (l.style.display = ""));
+        hasMatch = true;
+      }
+      cat.style.display = hasMatch ? "" : "none";
+    });
+  } else {
+    categories.forEach(cat => {
+      cat.style.display = "";
+      let labels = cat.querySelectorAll("label");
+      labels.forEach(l => (l.style.display = ""));
+    });
+  }
+});
+

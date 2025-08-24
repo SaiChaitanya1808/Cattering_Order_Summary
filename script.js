@@ -35,6 +35,7 @@ document.getElementById("myform").addEventListener("submit", function(e){
 });
 
 // Step-2 submit
+// Step-2 submit
 document.getElementById("menuForm").addEventListener("submit", function(e){
   e.preventDefault();
 
@@ -44,18 +45,17 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
   });
   orderData.menu = selected;
 
-  // WhatsApp message
-  let message = `
-  *New Catering Order* 🍴
-  ---------------------
-  👤 Name: ${orderData.name}
-  📞 Phone: ${orderData.phone}
-  🎉 Event: ${orderData.event}
-  📅 Date: ${orderData.date}
-  ⏰ Time: ${orderData.time}
-  👥 Guests: ${orderData.guests}
-  🍽️ Menu: ${orderData.menu.join(", ")}
-  `;
+  // Telugu WhatsApp message (line by line)
+  let message = 
+    "🍴 *కొత్త క్యాటరింగ్ ఆర్డర్* 🍴\n" +
+    "--------------------------------\n" +
+    "👤 పేరు: " + orderData.name + "\n" +
+    "📞 ఫోన్: " + orderData.phone + "\n" +
+    "🎉 ఈవెంట్: " + orderData.event + "\n" +
+    "📅 తేదీ: " + orderData.date + "\n" +
+    "⏰ సమయం: " + orderData.time + "\n" +
+    "👥 అతిథులు: " + orderData.guests + "\n" +
+    "🍽️ మెనూ: \n" + orderData.menu.join("\n");
 
   // 👇 ఇక్కడ నీ WhatsApp నంబర్ +91 తో పెట్టాలి
   let phoneNumber = "+919491011566";  
@@ -65,21 +65,20 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
   // WhatsApp లో open అవుతుంది
   window.open(whatsappURL, "_blank");
 
-  // Local summary కూడా చూపించడానికి
+  // Local summary చూపించడానికి
   let summaryDiv = document.getElementById("summary");
   summaryDiv.innerHTML = `
-    <p><b>పేరు / Name:</b> ${orderData.name}</p>
-    <p><b>ఫోన్ / Phone:</b> ${orderData.phone}</p>
-    <p><b>ఈవెంట్ / Event:</b> ${orderData.event}</p>
-    <p><b>తేదీ / Date:</b> ${orderData.date}</p>
-    <p><b>సమయం / Time:</b> ${orderData.time}</p>
-    <p><b>అతిథులు / Guests:</b> ${orderData.guests}</p>
-    <p><b>మెనూ / Menu:</b></p>
+    <p><b>పేరు:</b> ${orderData.name}</p>
+    <p><b>ఫోన్:</b> ${orderData.phone}</p>
+    <p><b>ఈవెంట్:</b> ${orderData.event}</p>
+    <p><b>తేదీ:</b> ${orderData.date}</p>
+    <p><b>సమయం:</b> ${orderData.time}</p>
+    <p><b>అతిథులు:</b> ${orderData.guests}</p>
+    <p><b>మెనూ:</b></p>
     <ul id="finalMenu"></ul>
     <hr>
     <h3 style="color: green; text-align:center;">
-      ✔️ మీ ఆర్డర్ విజయవంతంగా సమర్పించబడింది! <br> 
-      Your form was submitted successfully!
+      ✔️ మీ ఆర్డర్ విజయవంతంగా సమర్పించబడింది!
     </h3>
   `;
   let menuList = document.getElementById("finalMenu");
@@ -90,40 +89,4 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
   });
 
   gotopage(3);
-});
-
-// Search filter
-document.getElementById("menuSearch").addEventListener("input", function () {
-  let filter = this.value.toLowerCase().trim();
-  let categories = document.querySelectorAll(".category");
-
-  if (filter) {
-    categories.forEach(cat => {
-      let labels = cat.querySelectorAll("label");
-      let catTitle = cat.querySelector("h2,h3,h4")?.textContent.toLowerCase() || "";
-      let hasMatch = false;
-
-      labels.forEach(label => {
-        let text = label.textContent.toLowerCase();
-        if (text.includes(filter)) {
-          label.style.display = ""; 
-          hasMatch = true;
-        } else {
-          label.style.display = "none";
-        }
-      });
-
-      if (catTitle.includes(filter)) {
-        labels.forEach(l => (l.style.display = ""));
-        hasMatch = true;
-      }
-      cat.style.display = hasMatch ? "" : "none";
-    });
-  } else {
-    categories.forEach(cat => {
-      cat.style.display = "";
-      let labels = cat.querySelectorAll("label");
-      labels.forEach(l => (l.style.display = ""));
-    });
-  }
 });

@@ -5,6 +5,7 @@ function gotopage(pageNumber){
   document.getElementById("page"+pageNumber).classList.add("active");
 }
 
+// Checkbox selection → live preview
 document.querySelectorAll("input[type=checkbox]").forEach(chk=>{
   chk.addEventListener("change",()=>{
     let selected = [...document.querySelectorAll("input[type=checkbox]:checked")]
@@ -21,6 +22,7 @@ document.querySelectorAll("input[type=checkbox]").forEach(chk=>{
   });
 });
 
+// Step-1 submit
 document.getElementById("myform").addEventListener("submit", function(e){
   e.preventDefault();
   orderData.name = document.getElementById("name").value;
@@ -32,6 +34,7 @@ document.getElementById("myform").addEventListener("submit", function(e){
   gotopage(2);
 });
 
+// Step-2 submit
 document.getElementById("menuForm").addEventListener("submit", function(e){
   e.preventDefault();
 
@@ -40,7 +43,29 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
     selected.push(cb.value);
   });
   orderData.menu = selected;
-  
+
+  // WhatsApp message
+  let message = `
+  *New Catering Order* 🍴
+  ---------------------
+  👤 Name: ${orderData.name}
+  📞 Phone: ${orderData.phone}
+  🎉 Event: ${orderData.event}
+  📅 Date: ${orderData.date}
+  ⏰ Time: ${orderData.time}
+  👥 Guests: ${orderData.guests}
+  🍽️ Menu: ${orderData.menu.join(", ")}
+  `;
+
+  // 👇 ఇక్కడ నీ WhatsApp నంబర్ +91 తో పెట్టాలి
+  let phoneNumber = "+919491011566";  
+
+  let whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+  // WhatsApp లో open అవుతుంది
+  window.open(whatsappURL, "_blank");
+
+  // Local summary కూడా చూపించడానికి
   let summaryDiv = document.getElementById("summary");
   summaryDiv.innerHTML = `
     <p><b>పేరు / Name:</b> ${orderData.name}</p>
@@ -66,6 +91,8 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
 
   gotopage(3);
 });
+
+// Search filter
 document.getElementById("menuSearch").addEventListener("input", function () {
   let filter = this.value.toLowerCase().trim();
   let categories = document.querySelectorAll(".category");
@@ -100,4 +127,3 @@ document.getElementById("menuSearch").addEventListener("input", function () {
     });
   }
 });
-

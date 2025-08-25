@@ -90,3 +90,37 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
 
   gotopage(3);
 });
+document.getElementById("menuSearch").addEventListener("input", function () {
+  let filter = this.value.toLowerCase().trim();
+  let categories = document.querySelectorAll(".category");
+
+  if (filter) {
+    categories.forEach(cat => {
+      let labels = cat.querySelectorAll("label");
+      let catTitle = cat.querySelector("h2,h3,h4")?.textContent.toLowerCase() || "";
+      let hasMatch = false;
+
+      labels.forEach(label => {
+        let text = label.textContent.toLowerCase();
+        if (text.includes(filter)) {
+          label.style.display = ""; 
+          hasMatch = true;
+        } else {
+          label.style.display = "none";
+        }
+      });
+
+      if (catTitle.includes(filter)) {
+        labels.forEach(l => (l.style.display = ""));
+        hasMatch = true;
+      }
+      cat.style.display = hasMatch ? "" : "none";
+    });
+  } else {
+    categories.forEach(cat => {
+      cat.style.display = "";
+      let labels = cat.querySelectorAll("label");
+      labels.forEach(l => (l.style.display = ""));
+    });
+  }
+});

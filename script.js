@@ -35,7 +35,6 @@ document.getElementById("myform").addEventListener("submit", function(e){
 });
 
 // Step-2 submit
-// Step-2 submit
 document.getElementById("menuForm").addEventListener("submit", function(e){
   e.preventDefault();
 
@@ -78,7 +77,7 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
     <ul id="finalMenu"></ul>
     <hr>
     <h3 style="color: green; text-align:center;">
-      ✔️ మీ ఆర్డర్ విజయవంతంగా సమర్పించబడింది!
+      ✔️ మీ ఆర్డర్ విజయవంతంగా సమర్పించబడింది!||Your Order Was Submitted Succesfully!
     </h3>
   `;
   let menuList = document.getElementById("finalMenu");
@@ -90,6 +89,7 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
 
   gotopage(3);
 });
+//search
 document.getElementById("menuSearch").addEventListener("input", function () {
   let filter = this.value.toLowerCase().trim();
   let categories = document.querySelectorAll(".category");

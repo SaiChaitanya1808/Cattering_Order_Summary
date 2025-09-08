@@ -1,171 +1,233 @@
-       body {
-           font-family: 'Noto Serif Telugu', serif;
-           background-color: #ffe4b5;
-           margin: 0;
-           padding: 20px;
-           color: #4b2e2e;
-       }
+/* ---------------------------- */
+/*      Global Styles           */
+/* ---------------------------- */
+body {
+    font-family: 'Noto Serif Telugu', serif;
+    background: #fdf6f0; /* soft creamy base */
+    margin: 0;
+    padding: 20px;
+    color: #2e2e3a; /* deep charcoal */
+}
 
-       .container {
-           max-width: 600px;
-           margin: 0 auto;
-           background-color: rgba(255, 255, 255, 0.9);
-           padding: 20px;
-           border-radius: 10px;
-           box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-           border: 2px solid #d4a017;
-       }
+h1, h2, h3, h4 {
+    color: #2e2e3a;
+    font-weight: bold;
+}
 
-       h1 {
-           text-align: center;
-           color: #b22222;
-           font-size: 2em;
-           margin-bottom: 20px;
-       }
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 25px;
+}
 
-       .form {
-           display: block;
-           margin-bottom: 5px;
-           font-weight: bold;
-           color: #4b2e2e;
-       }
+/* ---------------------------- */
+/*      Container / Pages       */
+/* ---------------------------- */
+.container {
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 1px solid #e0e0e5;
+    transition: all 0.3s ease;
+}
 
-       .input,
-       textarea {
-           width: 95%;
-           padding: 10px;
-           margin-bottom: 15px;
-           border: 1px solid #d4a017;
-           border-radius: 5px;
-           font-family: 'Noto Serif Telugu', serif;
-           font-size: 1em;
-       }
+.page {
+    display: none;
+}
 
-       #event {
-           width: 98.7%;
-           padding: 10px;
-           margin-bottom: 15px;
-           border: 1px solid #d4a017;
-           border-radius: 5px;
-           font-family: 'Noto Serif Telugu', serif;
-           font-size: 1em;
-       }
+.active {
+    display: block;
+}
 
-       input:focus,
-       select:focus,
-       textarea:focus {
-           outline: none;
-           border-color: #110f0f;
-       }
+/* ---------------------------- */
+/*      Form Styles             */
+/* ---------------------------- */
+.form {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2e2e3a;
+}
 
-       button {
-           background-color: #b22222;
-           color: white;
-           padding: 12px 20px;
-           border: none;
-           border-radius: 5px;
-           cursor: pointer;
-           font-size: 1.1em;
-           display: block;
-           margin: 20px auto;
-       }
+.input, 
+textarea {
+    width: 95%;
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border: 1px solid #e0e0e5;
+    border-radius: 8px;
+    font-size: 1em;
+    background: #f7f7f9;
+    transition: all 0.3s ease;
+}
+select{
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border: 1px solid #e0e0e5;
+    border-radius: 8px;
+    font-size: 1em;
+    background: #f7f7f9;
+    transition: all 0.3s ease;
+}
 
-       button:hover {
-           background-color: #6fa11e;
-       }
+.input:focus, 
+select:focus, 
+textarea:focus {
+    outline: none;
+    border: 2px solid #ff7e5f;
+    box-shadow: 0 0 10px rgba(255,126,95,0.3);
+}
 
-       .border {
-           border: 3px solid #d4a017;
-           border-radius: 10px;
-           padding: 10px;
-           background-size: cover;
-       }
+/* ---------------------------- */
+/*      Button Styles           */
+/* ---------------------------- */
+button {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: block;
+    margin: 25px auto;
+    transition: all 0.3s ease;
+}
 
-       .form::after {
-           font-family: Arial, sans-serif;
-           font-size: 0.9em;
-           color: #666;
-           margin-left: 10px;
-       }
+button:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,126,95,0.3);
+}
 
-       .page {
-           display: none;
-       }
+/* ---------------------------- */
+/*      Categories / Menu       */
+/* ---------------------------- */
+.category {
+    max-width: 700px;
+    margin: 0 auto 15px auto;
+    background: #f4f4f9;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e5;
+    transition: all 0.3s ease;
+}
 
-       .active {
-           display: block;
-       }
+.category:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
 
-       .category {
-           max-width: 800px;
-           margin: 0 auto;
-           background-color: rgba(255, 255, 255, 0.9);
-           padding: 20px;
-           border-radius: 10px;
-           box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-           border: 2px solid #d4a017;
-           margin-bottom: 10px;
-       }
+/* ---------------------------- */
+/*      Menu Item / Checkbox    */
+/* ---------------------------- */
+.li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    border: 1px solid #e0e0e5;
+}
 
-       .li {
-           margin-bottom: 15px;
-           cursor: pointer;
-           font-size: 20px;
-           font-weight: 600;
-       }
+.li:hover {
+    background: #ffd7aa; /* soft gold hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
 
-       .li input {
-           margin-right: 10px;
-       }
+.li input {
+    margin-right: 15px;
+    transform: scale(1.3);
+    accent-color: #ff7e5f;
+}
 
-       .h2 {
-           font-weight: bolder;
-           font-size: 30px;
-       }
+/* ---------------------------- */
+/*      Search Input            */
+#menuSearch {
+    width: 60%;
+    max-width: 400px;
+    padding: 12px 15px;
+    font-size: 1.1em;
+    border: 2px solid #e0e0e5;
+    border-radius: 10px;
+    background-color: #fff8f2;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
 
-       .Summary {
-           font-size: larger;
-           display: grid;
-       }
+#menuSearch:focus {
+    text-align: center;
+    border-color: #ff7e5f;
+    box-shadow: 0 0 12px rgba(255,126,95,0.4);
+}
 
-       .search-container {
-           text-align: center;
-           margin: 20px 0;
-       }
+/* ---------------------------- */
+/*      Selected Items / Summary */
+#selectedList, #finalMenu {
+    list-style: none;
+    padding-left: 0;
+}
 
-       #menuSearch {
-           width: 60%;
-           max-width: 400px;
-           padding: 12px 15px;
-           font-size: 1.1em;
-           border: 2px solid #d4a017;
-           background-color: #fff8e7;
-           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-           font-family: 'Noto Serif Telugu', serif;
-           text-align: center;
-       }
+#selectedList li, #finalMenu li {
+    background: #d8f3dc; /* minty green */
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 500;
+}
 
-       #menuSearch:focus {
-           border-color: #b22222;
-           box-shadow: 0 0 12px rgba(178, 34, 34, 0.6);
-           background-color: #ffffff;
-       }
+#summary {
+    padding: 20px;
+    background: #f4f4f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
 
-       @media (max-width: 1000px) {
-           .container {
-               padding: 10px;
-           }
+/* ---------------------------- */
+/*      Responsive Design       */
+@media (max-width: 1000px) {
+    .container {
+        padding: 15px 20px;
+    }
 
-           h1 {
-               font-size: 1.5em;
-           }
+    h1 {
+        font-size: 1.7em;
+    }
 
-           #event {
-               width: 97.85%;
-           }
+    .input, textarea{
+        width: 92%;
+    }
+    select{
+        width: 100%;
+    }
 
-           .input,
-           textarea {
-               width: 91%;
-           }
-       }
+    .li {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    #menuSearch {
+        width: 90%;
+    }
+}
+
+.page {
+     display: none;
+    }
+
+    .active {
+        display: block;
+    }

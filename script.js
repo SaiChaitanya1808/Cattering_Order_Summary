@@ -27,11 +27,8 @@ document.getElementById("myform").addEventListener("submit", function (e) {
   e.preventDefault();
   orderData.name = document.getElementById("name").value;
   orderData.phone = document.getElementById("phone").value;
-  
-  // New fields
   orderData.village = document.getElementById("villagename").value;
   orderData.address = document.getElementById("address").value;
-
   orderData.event = document.getElementById("event").value;
   orderData.date = document.getElementById("date").value;
   orderData.time = document.getElementById("time").value;
@@ -62,8 +59,6 @@ document.getElementById("menuForm").addEventListener("submit", function (e) {
     "⏰ సమయం: " + orderData.time + "\n" +
     "👥 అతిథులు: " + orderData.guests + "\n" +
     "🍽️ మెనూ: \n" + orderData.menu.join("\n");
-
-  // 👇 ఇక్కడ నీ WhatsApp నంబర్ +91 తో పెట్టాలి
   let phoneNumber = "+919491011566";
   let whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
   window.open(whatsappURL, "_blank");

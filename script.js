@@ -18,7 +18,7 @@ const translations = {
         villageLabel: "Village/Colony Name:",
         villagePlaceholder: "Village/Colony Name",
         addressLabel: "Full Address:",
-        addressPlaceholder: "Full Address (Click to view your location)",
+        addressPlaceholder: "Full Address",
         eventLabel: "Event Type:",
         eventOptions: {
             select: "Select",
@@ -70,7 +70,7 @@ const translations = {
         villageLabel: "గ్రామం/పల్లి పేరు:",
         villagePlaceholder: "గ్రామం/పల్లి పేరు",
         addressLabel: "పూర్తి చిరునామా:",
-        addressPlaceholder: "పూర్తి చిరునామా (స్థానం చూడటానికి క్లిక్ చేయండి)",
+        addressPlaceholder: "పూర్తి చిరునామా",
         eventLabel: "ఈవెంట్ రకం:",
         eventOptions: {
             select: "ఎంచుకోండి",

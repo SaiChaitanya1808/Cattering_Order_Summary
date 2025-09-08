@@ -1,20 +1,20 @@
-let orderData = {}; 
+let orderData = {};
 
-function gotopage(pageNumber){
-  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-  document.getElementById("page"+pageNumber).classList.add("active");
+function gotopage(pageNumber) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById("page" + pageNumber).classList.add("active");
 }
 
 // Checkbox selection → live preview
-document.querySelectorAll("input[type=checkbox]").forEach(chk=>{
-  chk.addEventListener("change",()=>{
+document.querySelectorAll("input[type=checkbox]").forEach(chk => {
+  chk.addEventListener("change", () => {
     let selected = [...document.querySelectorAll("input[type=checkbox]:checked")]
-      .map(c=>c.value);
+      .map(c => c.value);
 
     let listEl = document.getElementById("selectedList");
     listEl.innerHTML = "";
 
-    selected.forEach(item=>{
+    selected.forEach(item => {
       let li = document.createElement("li");
       li.textContent = item;
       listEl.appendChild(li);
@@ -23,10 +23,15 @@ document.querySelectorAll("input[type=checkbox]").forEach(chk=>{
 });
 
 // Step-1 submit
-document.getElementById("myform").addEventListener("submit", function(e){
+document.getElementById("myform").addEventListener("submit", function (e) {
   e.preventDefault();
   orderData.name = document.getElementById("name").value;
   orderData.phone = document.getElementById("phone").value;
+  
+  // New fields
+  orderData.village = document.getElementById("villagename").value;
+  orderData.address = document.getElementById("address").value;
+
   orderData.event = document.getElementById("event").value;
   orderData.date = document.getElementById("date").value;
   orderData.time = document.getElementById("time").value;
@@ -35,21 +40,23 @@ document.getElementById("myform").addEventListener("submit", function(e){
 });
 
 // Step-2 submit
-document.getElementById("menuForm").addEventListener("submit", function(e){
+document.getElementById("menuForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   let selected = [];
-  document.querySelectorAll("input[type='checkbox']:checked").forEach(cb=>{
+  document.querySelectorAll("input[type='checkbox']:checked").forEach(cb => {
     selected.push(cb.value);
   });
   orderData.menu = selected;
 
   // Telugu WhatsApp message (line by line)
-  let message = 
+  let message =
     "🍴 *కొత్త క్యాటరింగ్ ఆర్డర్* 🍴\n" +
     "--------------------------------\n" +
     "👤 పేరు: " + orderData.name + "\n" +
     "📞 ఫోన్: " + orderData.phone + "\n" +
+    "🏡 గ్రామం/పల్లి: " + orderData.village + "\n" +
+    "📬 చిరునామా: " + orderData.address + "\n" +
     "🎉 ఈవెంట్: " + orderData.event + "\n" +
     "📅 తేదీ: " + orderData.date + "\n" +
     "⏰ సమయం: " + orderData.time + "\n" +
@@ -57,18 +64,17 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
     "🍽️ మెనూ: \n" + orderData.menu.join("\n");
 
   // 👇 ఇక్కడ నీ WhatsApp నంబర్ +91 తో పెట్టాలి
-  let phoneNumber = "+919491011566";  
-
+  let phoneNumber = "+919491011566";
   let whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
-
-  // WhatsApp లో open అవుతుంది
   window.open(whatsappURL, "_blank");
 
-  // Local summary చూపించడానికి
+  // Local summary
   let summaryDiv = document.getElementById("summary");
   summaryDiv.innerHTML = `
     <p><b>పేరు:</b> ${orderData.name}</p>
     <p><b>ఫోన్:</b> ${orderData.phone}</p>
+    <p><b>గ్రామం/పల్లి:</b> ${orderData.village}</p>
+    <p><b>చిరునామా:</b> ${orderData.address}</p>
     <p><b>ఈవెంట్:</b> ${orderData.event}</p>
     <p><b>తేదీ:</b> ${orderData.date}</p>
     <p><b>సమయం:</b> ${orderData.time}</p>
@@ -77,11 +83,11 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
     <ul id="finalMenu"></ul>
     <hr>
     <h3 style="color: green; text-align:center;">
-      ✔️ మీ ఆర్డర్ విజయవంతంగా సమర్పించబడింది!||Your Order Was Submitted Succesfully!
+      ✔️ మీ ఆర్డర్ విజయవంతంగా సమర్పించబడింది! || Your Order Was Submitted Successfully!
     </h3>
   `;
   let menuList = document.getElementById("finalMenu");
-  orderData.menu.forEach(item=>{
+  orderData.menu.forEach(item => {
     let li = document.createElement("li");
     li.textContent = item;
     menuList.appendChild(li);
@@ -89,6 +95,7 @@ document.getElementById("menuForm").addEventListener("submit", function(e){
 
   gotopage(3);
 });
+
 //search
 document.getElementById("menuSearch").addEventListener("input", function () {
   let filter = this.value.toLowerCase().trim();
@@ -103,7 +110,7 @@ document.getElementById("menuSearch").addEventListener("input", function () {
       labels.forEach(label => {
         let text = label.textContent.toLowerCase();
         if (text.includes(filter)) {
-          label.style.display = ""; 
+          label.style.display = "";
           hasMatch = true;
         } else {
           label.style.display = "none";

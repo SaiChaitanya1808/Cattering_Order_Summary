@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="te">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="header">
         <h1 id="header-title">శ్రీ దుర్గా సాయి కేటరింగ్ | Sri Durga Sai Catering</h1>
@@ -26,7 +28,9 @@
                 <div class="address-card">
                     <p><i class="fas fa-user"></i> <strong id="owner-name-label">పేరు | Name:</strong> Gavara Srinu</p>
                     <p><i class="fas fa-phone"></i> <strong id="owner-phone-label">ఫోన్ | Phone:</strong> 9989982499</p>
-                    <p><i class="fas fa-map-marker-alt"></i> <strong id="owner-address-label">చిరునామా | Address:</strong> Ramarao Peta, Kottha Colony, Near Krishna Bhavani Hospital, 4th Street, Palakol, West Godavari, Andhra Pradesh, 534260</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong id="owner-address-label">చిరునామా |
+                            Address:</strong> Ramarao Peta, Kottha Colony, Near Krishna Bhavani Hospital, 4th Street,
+                        Palakol, West Godavari, Andhra Pradesh, 534260</p>
                 </div>
             </div>
         </div>
@@ -38,13 +42,18 @@
                 <input type="text" class="input" id="name" name="name" placeholder="మీ పేరు | Your Name" required>
 
                 <label for="phone" class="form" id="phone-label">ఫోన్ నంబర్ | Phone Number:</label>
-                <input type="tel" class="input" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10);" maxlength="10" id="phone" name="phone" placeholder="మీ ఫోన్ నంబర్ | Your Phone Number" required>
+                <input type="tel" class="input" inputmode="numeric"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10);" maxlength="10" id="phone"
+                    name="phone" placeholder="మీ ఫోన్ నంబర్ | Your Phone Number" required>
 
-                <label for="villagename" class="form" id="village-label">గ్రామం/పల్లి పేరు | Village/Colony Name:</label>
-                <input type="text" class="input" id="villagename" name="villagename" placeholder="గ్రామం/పల్లి పేరు | Village/Colony Name" required>
+                <label for="villagename" class="form" id="village-label">గ్రామం/పల్లి పేరు | Village/Colony
+                    Name:</label>
+                <input type="text" class="input" id="villagename" name="villagename"
+                    placeholder="గ్రామం/పల్లి పేరు | Village/Colony Name" required>
 
                 <label for="address" class="form" id="address-label">పూర్తి చిరునామా | Full Address:</label>
-                <textarea id="address" class="input" name="address" rows="3" placeholder="పూర్తి చిరునామా | Full Address"required></textarea>
+                <textarea id="address" class="input" name="address" rows="3"
+                    placeholder="పూర్తి చిరునామా | Full Address" required></textarea>
                 <iframe id="map" frameborder="0" style="border:0" allowfullscreen></iframe>
 
                 <label for="event" class="form" id="event-label">ఈవెంట్ రకం | Event Type:</label>
@@ -55,7 +64,14 @@
                     <option value="corporate">కార్పొరేట్ ఈవెంట్ | Corporate Event</option>
                     <option value="other">ఇతర కారిక్రమాలు | Other Events</option>
                 </select>
-
+                <label for="meal-times" class="form" id="meal-times-label">భోజన సమయాలు | Meal Times:</label>
+                <select id="meal-times" name="meal-times" multiple required>
+                    <option value="morning-tiffins">పొద్దున్న టిఫిన్స్ | Morning Tiffins</option>
+                    <option value="afternoon-meals">మధ్యాహ్నం భోజనాలు | Afternoon Meals</option>
+                    <option value="evening-snacks">సాయంత్రం స్నాక్స్ | Evening Snacks</option>
+                    <option value="night-tiffins">రాత్రి టిఫిన్స్ | Night Tiffins</option>
+                    <option value="night-meals">రాత్రి భోజనాలు | Night Meals</option>
+                </select>
                 <label for="date" class="form" id="date-label">ఈవెంట్ తేదీ | Event Date:</label>
                 <input type="date" class="input" id="date" name="date" required>
 
@@ -63,10 +79,12 @@
                 <input type="time" class="input" id="time" name="time" required>
 
                 <label for="guests" class="form" id="guests-label">అతిథుల సంఖ్య | No Of People:</label>
-                <input type="number" class="input" id="guests" name="guests" placeholder="అతిథుల సంఖ్య | Number of Guests" required>
+                <input type="number" class="input" id="guests" name="guests"
+                    placeholder="అతిథుల సంఖ్య | Number of Guests" required>
 
                 <label for="menu" class="form" id="menu-label">మెనూ ప్రాధాన్యతలు | Additional Details:</label>
-                <textarea id="menu" class="input" name="menu" rows="4" placeholder="మీ మెనూ ప్రాధాన్యతలు లేదా ప్రత్యేక అవసరాలు | Your Menu Preferences or Special Requirements"></textarea>
+                <textarea id="menu" class="input" name="menu" rows="4"
+                    placeholder="మీ మెనూ ప్రాధాన్యతలు లేదా ప్రత్యేక అవసరాలు | Your Menu Preferences or Special Requirements"></textarea>
 
                 <button type="submit" id="submit-btn">ఆర్డర్ సమర్పించు | Submit Order</button>
             </div>
@@ -74,18 +92,34 @@
         <div class="note" id="highlights-section">
             <h3 id="highlights-title">కేటరింగ్ ముఖ్యాంశాలు | Catering Highlights</h3>
             <ul id="highlights-list">
-                <li>మేము ప్రతి వంటకాన్ని ఎంతో శ్రద్ధతో, neat & clean గా maintain చేస్తాము.<br>(We maintain every dish with utmost care, keeping it neat & clean.)</li>
-                <li>ప్రతి non-veg మరియు veg item functionలకు, panfagalaku ప్రత్యేకంగా అందించబడుతుంది.<br>(Each non-veg and veg item is specially prepared and supplied for functions and parties.)</li>
-                <li>మేము కట్టింగ్, prep, cooking ప్రతి దశలో **ఆహార స్వచ్ఛత & పరిశుభ్రత** ను కచ్చితంగా పాటిస్తాము.<br>(We strictly follow food safety and cleanliness at every stage: cutting, preparation, and cooking.)</li>
-                <li>వంటకాల్లో ఏ విధమైన food preservatives ఉపయోగించము; ప్రతి పదార్థం fresh & quality products నుండి తయారు చేయబడుతుంది.<br>(No food preservatives are used; all ingredients are fresh and of high quality.)</li>
-                <li>మేము large scale functions, weddings, parties కి supply చేయగలిగే సామర్థ్యం కల్గిన catering service అందిస్తాము.<br>(We provide catering services capable of supplying large-scale functions, weddings, and parties.)</li>
-                <li>ఒక్కొక్క item ఎంతో neat & organized గా, proper storage తో present చేయబడుతుంది.<br>(Each item is presented neatly and organized with proper storage.)</li>
-                <li>మేము cooking, packaging, delivery ప్రతి దశలో cleanliness & hygiene కాపాడుతాము.<br>(We maintain cleanliness and hygiene in cooking, packaging, and delivery.)</li>
-                <li>మాకు supply చేసే staff trained & responsible; ప్రతి functionలో professional behaviour ను maintain చేస్తారు.<br>(Our staff is trained and responsible, maintaining professional behavior at every function.)</li>
-                <li>మాకు కొన్ని extra requirements ఉంటే, client convenience కోసం customized menu planning కూడా అందుబాటులో ఉంటుంది.<br>(If clients have extra requirements, customized menu planning is available for their convenience.)</li>
-                <li>**ఆహార పరిశుభ్రత & neatness** మాకు మొదటి ప్రాధాన్యత.<br>(Food hygiene and neatness are our top priority.)</li>
-                <li>catering boys, assistants, staff కూడా proper sanitation maintain చేస్తారు.<br>(Catering boys, assistants, and staff also maintain proper sanitation.)</li>
-                <li>large & small events లో కూడా food quality, taste & presentation పై పూర్తిగా దృష్టి పెట్టబడుతుంది.<br>(For both large and small events, we focus completely on food quality, taste, and presentation.)</li>
+                <li>మేము ప్రతి వంటకాన్ని ఎంతో శ్రద్ధతో, పరిశుభ్రంగా నిర్వహిస్తాము.<br>(We maintain every dish with
+                    utmost care, keeping it neat and clean.)</li>
+                <li>ప్రతి నాన్-వెజ్ మరియు వెజ్ ఐటమ్‌ను ప్రత్యేకంగా ఫంక్షన్స్, పండగల కోసం తయారు చేసి అందిస్తాము.<br>(Each
+                    non-veg and veg item is specially prepared and served for functions and celebrations.)</li>
+                <li>కట్టింగ్, ప్రిపరేషన్, కుకింగ్ ప్రతి దశలో ఆహార స్వచ్ఛత మరియు పరిశుభ్రతను కచ్చితంగా పాటిస్తాము.<br>(We
+                    strictly follow food safety and hygiene at every stage: cutting, preparation, and cooking.)</li>
+                <li>మా వంటకాల్లో ఎలాంటి ఫుడ్ ప్రిజర్వేటివ్స్ ఉపయోగించము; ప్రతి పదార్థం తాజా మరియు నాణ్యమైన వాటితో తయారు
+                    చేయబడుతుంది.<br>(No food preservatives are used; all ingredients are fresh and of premium quality.)
+                </li>
+                <li>మేము పెద్ద ఫంక్షన్స్, పెళ్లిళ్లు, పార్టీలు వంటి ఈవెంట్స్‌కు సరిపడే క్యాటరింగ్ సర్వీస్
+                    అందిస్తాము.<br>(We provide catering services suitable for large functions, weddings, and parties.)
+                </li>
+                <li>ఒక్కో ఐటమ్‌ను పరిశుభ్రంగా, సక్రమమైన స్టోరేజ్‌తో అందిస్తాము.<br>(Each item is presented neatly and
+                    stored properly.)</li>
+                <li>కుకింగ్, ప్యాకేజింగ్, డెలివరీ ప్రతి దశలో శుభ్రత మరియు హైజీన్‌ను కాపాడుతాము.<br>(We maintain
+                    cleanliness and hygiene during cooking, packaging, and delivery.)</li>
+                <li>మా సిబ్బంది ట్రెయిన్డ్ మరియు రెస్పాన్సిబుల్‌గా ఉంటారు; ప్రతి ఫంక్షన్‌లో ప్రొఫెషనల్ ప్రవర్తనను
+                    పాటిస్తారు.<br>(Our staff is trained and responsible, maintaining professional behavior at every
+                    function.)</li>
+                <li>కస్టమర్ అవసరాలకు అనుగుణంగా కస్టమైజ్డ్ మెనూ ప్లానింగ్ కూడా అందుబాటులో ఉంటుంది.<br>(Customized menu
+                    planning is available according to client requirements.)</li>
+                <li>ఆహార పరిశుభ్రత మరియు నిట్టనిలువైన ప్రదర్శన మా మొదటి ప్రాధాన్యత.<br>(Food hygiene and neat
+                    presentation are our top priority.)</li>
+                <li>క్యాటరింగ్ బాయ్స్, అసిస్టెంట్స్, సిబ్బంది అందరూ కూడా శుభ్రతను కచ్చితంగా పాటిస్తారు.<br>(Catering
+                    boys, assistants, and staff strictly maintain proper sanitation.)</li>
+                <li>చిన్న, పెద్ద ఈవెంట్స్‌లో కూడా ఫుడ్ క్వాలిటీ, రుచి, ప్రెజెంటేషన్‌పై పూర్తి దృష్టి
+                    పెట్టబడుతుంది.<br>(For both small and large events, we focus completely on food quality, taste, and
+                    presentation.)</li>
             </ul>
         </div>
     </div>
@@ -104,19 +138,29 @@
         <div class="category">
             <h2 class="h2">స్వీట్స్ | Sweets</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="Bread Halva"> బ్రెడ్ హల్వా | Bread Halva</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Paramannam/Ksheerannam"> పరమన్నం/క్షీరాన్నం | Paramannam/Ksheerannam</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Carrot Halva"> క్యారెట్ హల్వా | Carrot Halva</label><br>
-                <label class="li"><input class="li" type="checkbox" value="DryFruit Halva"> డ్రై ఫ్రూట్ హల్వా | DryFruit Halva</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Chakkarapongali"> చక్కర పొంగలి | Chakkara Pongali</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Ravva Kesari"> రవ్వ కేసరి | Ravva Kesari</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Semya Kesari"> సేమ్యా కేసరి | Semya Kesari</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Annavaram Prasadam"> అన్నవరం ప్రసాదం | Annavaram Prasadam</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Bread Halva"> బ్రెడ్ హల్వా | Bread
+                    Halva</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Paramannam/Ksheerannam"> పరమన్నం/క్షీరాన్నం |
+                    Paramannam/Ksheerannam</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Carrot Halva"> క్యారెట్ హల్వా | Carrot
+                    Halva</label><br>
+                <label class="li"><input class="li" type="checkbox" value="DryFruit Halva"> డ్రై ఫ్రూట్ హల్వా | DryFruit
+                    Halva</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chakkarapongali"> చక్కర పొంగలి | Chakkara
+                    Pongali</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Ravva Kesari"> రవ్వ కేసరి | Ravva
+                    Kesari</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Semya Kesari"> సేమ్యా కేసరి | Semya
+                    Kesari</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Annavaram Prasadam"> అన్నవరం ప్రసాదం |
+                    Annavaram Prasadam</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Junnu"> జున్ను | Junnu</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Gulab Jam"> గులాబ్ జామ్ | Gulab Jam</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Gulab Jam"> గులాబ్ జామ్ | Gulab
+                    Jam</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Bobbattu"> బొబ్బట్టు | Bobbattu</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Jilebi"> జిలేబి | Jilebi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Kova Puuri"> కోవ పూరి | Kova Puuri</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Kova Puuri"> కోవ పూరి | Kova
+                    Puuri</label><br>
             </ul>
         </div>
         <div class="category">
@@ -124,104 +168,167 @@
             <ul>
                 <label class="li"><input class="li" type="checkbox" value="Buuri"> బూరి | Buuri</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Gaari"> గారి | Gaari</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mirapakay Bajji"> మిరపకాయ బజ్జి | Mirapakay Bajji</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Aratikay Bajji"> అరటికాయ బజ్జి | Aratikay Bajji</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mirapakay Bajji"> మిరపకాయ బజ్జి | Mirapakay
+                    Bajji</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Aratikay Bajji"> అరటికాయ బజ్జి | Aratikay
+                    Bajji</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Vada"> వడ | Vada</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Egg Bajji"> ఎగ్ బజ్జి | Egg Bajji</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Samosa"> సమోసా | Samosa</label><br>
-                <label class="li"><input class="li" type="checkbox" value="SweetCorn Samosa"> స్వీట్ కార్న్ సమోసా | SweetCorn Samosa</label><br>
-                <label class="li"><input class="li" type="checkbox" value="SweetCorn Roll"> స్వీట్ కార్న్ రోల్ | SweetCorn Roll</label><br>
+                <label class="li"><input class="li" type="checkbox" value="SweetCorn Samosa"> స్వీట్ కార్న్ సమోసా |
+                    SweetCorn Samosa</label><br>
+                <label class="li"><input class="li" type="checkbox" value="SweetCorn Roll"> స్వీట్ కార్న్ రోల్ |
+                    SweetCorn Roll</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">ఫ్లేవర్డ్ రైస్ ఐటమ్స్ | Flavoured Rice Items</h2>
             <ul>
                 <label class="li"><input class="li" type="checkbox" value="Pulihora"> పులిహోర | Pulihora</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Tomato Rice"> టమాటో రైస్ | Tomato Rice</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Jeera Rice"> జీరా రైస్ | Jeera Rice</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Tomato Rice"> టమాటో రైస్ | Tomato
+                    Rice</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Jeera Rice"> జీరా రైస్ | Jeera
+                    Rice</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Kichidi"> ఖిచిడి | Kichidi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Lemon Rice"> నిమ్మకాయ రైస్ | Lemon Rice</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Kotthimeera Rice"> కొత్తిమీర రైస్ | Kotthimeera Rice</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Veg FriedRice"> వెజ్ ఫ్రైడ్ రైస్ | Veg FriedRice</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Bagara Rice"> బగారా రైస్ | Bagara Rice</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Lemon Rice"> నిమ్మకాయ రైస్ | Lemon
+                    Rice</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Kotthimeera Rice"> కొత్తిమీర రైస్ |
+                    Kotthimeera Rice</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Veg FriedRice"> వెజ్ ఫ్రైడ్ రైస్ | Veg
+                    FriedRice</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Bagara Rice"> బగారా రైస్ | Bagara
+                    Rice</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">వెజ్ బిర్యానీస్ | Biryanis (Veg)</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="Veg Dum Biryani"> వెజ్ డమ్ బిర్యానీ | Veg Dum Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mixed Veg Biryani"> మిక్స్‌డ్ వెజ్ బిర్యానీ | Mixed Veg Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Panasakay Biryani"> పనసకాయ బిర్యానీ | Panasakay Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Paneer Biryani"> పనీర్ బిర్యానీ | Paneer Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mushroom Biryani"> మష్రూమ్ బిర్యానీ | Mushroom Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Baby Corn Biryani"> బేబీకార్న్ బిర్యానీ | Baby Corn Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Millmaker Biryani"> మీల్మేకర్ బిర్యానీ | Millmaker Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Aloo Biryani"> ఆలూ బిర్యానీ | Aloo Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Veg Pulav"> వెజ్ పులావ్ | Veg Pulav</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Veg Dum Biryani"> వెజ్ డమ్ బిర్యానీ | Veg Dum
+                    Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mixed Veg Biryani"> మిక్స్‌డ్ వెజ్ బిర్యానీ |
+                    Mixed Veg Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Panasakay Biryani"> పనసకాయ బిర్యానీ |
+                    Panasakay Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Paneer Biryani"> పనీర్ బిర్యానీ | Paneer
+                    Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mushroom Biryani"> మష్రూమ్ బిర్యానీ |
+                    Mushroom Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Baby Corn Biryani"> బేబీకార్న్ బిర్యానీ |
+                    Baby Corn Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Millmaker Biryani"> మీల్మేకర్ బిర్యానీ |
+                    Millmaker Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Aloo Biryani"> ఆలూ బిర్యానీ | Aloo
+                    Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Veg Pulav"> వెజ్ పులావ్ | Veg
+                    Pulav</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">నాన్-వెజ్ బిర్యానీస్ | Biryanis (Non-Veg)</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="Chicken Dum Biryani"> చికెన్ డమ్ బిర్యానీ | Chicken Dum Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mutton Dum Biryani"> మటన్ డమ్ బిర్యానీ | Mutton Dum Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mixed Biryani"> మిక్స్‌డ్ బిర్యానీ | Mixed Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Chicken FryPiece Biryani"> చికెన్ ఫ్రై పీస్ బిర్యానీ | Chicken FryPiece Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mutton FryPiece Biryani"> మటన్ ఫ్రై పీస్ బిర్యానీ | Mutton FryPiece Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Chicken Pulav"> చికెన్ పులావ్ | Chicken Pulav</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Prawns Biryani"> ప్రాన్స్ బిర్యానీ | Prawns Biryani</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Egg Biryani"> ఎగ్ బిర్యానీ | Egg Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chicken Dum Biryani"> చికెన్ డమ్ బిర్యానీ |
+                    Chicken Dum Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mutton Dum Biryani"> మటన్ డమ్ బిర్యానీ |
+                    Mutton Dum Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mixed Biryani"> మిక్స్‌డ్ బిర్యానీ | Mixed
+                    Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chicken FryPiece Biryani"> చికెన్ ఫ్రై పీస్
+                    బిర్యానీ | Chicken FryPiece Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mutton FryPiece Biryani"> మటన్ ఫ్రై పీస్
+                    బిర్యానీ | Mutton FryPiece Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chicken Pulav"> చికెన్ పులావ్ | Chicken
+                    Pulav</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Prawns Biryani"> ప్రాన్స్ బిర్యానీ | Prawns
+                    Biryani</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Egg Biryani"> ఎగ్ బిర్యానీ | Egg
+                    Biryani</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">వెజ్ కర్రీలు | Veg Curries</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="Aloo Curry"> ఆలూ కర్రీ | Aloo Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Bendakaya Fry"> బెండకాయ వేపుడు | Bendakaya Fry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Gutti Vankaya Curry"> గుత్తి వంకాయ కర్రీ | Gutti Vankaya Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Beerakaya Curry"> బీరకాయ కర్రీ | Beerakaya Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Potlakaya Curry"> పొట్లకాయ కర్రీ | Potlakaya Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Dosakaya Curry"> దోసకాయ కర్రీ | Dosakaya Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Chikkudukaya Curry"> చిక్కుడు కర్రీ | Chikkudukaya Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Munakkada Curry"> మునగకాయ కర్రీ | Munakkada Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mullakada Curry"> ముల్లకాడ కర్రీ | Mullakada Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Kanda Curry"> కంద కర్రీ | Kanda Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Sorakaya Curry"> సొరకాయ కర్రీ | Sorakaya Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mushroom Curry"> మష్రూమ్ కర్రీ | Mushroom Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mushroom Fry"> మష్రూమ్ వేపుడు | Mushroom Fry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Kanda Fry"> కంద వేపుడు | Kanda Fry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Panchratna Curry"> పంచరత్న కర్రీ | Panchratna Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Veg Chicken Curry"> వెజ్ చికెన్ కర్రీ | Veg Chicken Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Veg Mutton Curry"> వెజ్ మటన్ కర్రీ | Veg Mutton Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Chegodila Kurma"> చెగొడిల కూర్మా | Chegodila Kurma</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Aloo Curry"> ఆలూ కర్రీ | Aloo
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Bendakaya Fry"> బెండకాయ వేపుడు | Bendakaya
+                    Fry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Gutti Vankaya Curry"> గుత్తి వంకాయ కర్రీ |
+                    Gutti Vankaya Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Beerakaya Curry"> బీరకాయ కర్రీ | Beerakaya
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Potlakaya Curry"> పొట్లకాయ కర్రీ | Potlakaya
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Dosakaya Curry"> దోసకాయ కర్రీ | Dosakaya
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chikkudukaya Curry"> చిక్కుడు కర్రీ |
+                    Chikkudukaya Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Munakkada Curry"> మునగకాయ కర్రీ | Munakkada
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mullakada Curry"> ముల్లకాడ కర్రీ | Mullakada
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Kanda Curry"> కంద కర్రీ | Kanda
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Sorakaya Curry"> సొరకాయ కర్రీ | Sorakaya
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mushroom Curry"> మష్రూమ్ కర్రీ | Mushroom
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mushroom Fry"> మష్రూమ్ వేపుడు | Mushroom
+                    Fry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Kanda Fry"> కంద వేపుడు | Kanda
+                    Fry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Panchratna Curry"> పంచరత్న కర్రీ | Panchratna
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Veg Chicken Curry"> వెజ్ చికెన్ కర్రీ | Veg
+                    Chicken Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Veg Mutton Curry"> వెజ్ మటన్ కర్రీ | Veg
+                    Mutton Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chegodila Kurma"> చెగొడిల కూర్మా | Chegodila
+                    Kurma</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">పప్పులు | Pappulu</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="Tomato Pappu"> టమోటా పప్పు | Tomato Pappu</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Gongura Pappu"> గొంగూర పప్పు | Gongura Pappu</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Palakura Pappu"> పాలకూర పప్పు | Palakura Pappu</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Dosakaya Pappu"> దోసకాయ పప్పు | Dosakaya Pappu</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mango Pappu"> మామిడికాయ పప్పు | Mango Pappu</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Beerakaya Pappu"> బీరకాయ పప్పు | Beerakaya Pappu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Tomato Pappu"> టమోటా పప్పు | Tomato
+                    Pappu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Gongura Pappu"> గొంగూర పప్పు | Gongura
+                    Pappu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Palakura Pappu"> పాలకూర పప్పు | Palakura
+                    Pappu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Dosakaya Pappu"> దోసకాయ పప్పు | Dosakaya
+                    Pappu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mango Pappu"> మామిడికాయ పప్పు | Mango
+                    Pappu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Beerakaya Pappu"> బీరకాయ పప్పు | Beerakaya
+                    Pappu</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">పచ్చళ్ళు | Pachadlu</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="Avakaya Pachadi"> ఆవకాయ పచ్చడి | Avakaya Pachadi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Gongura Pachadi"> గోంగూర పచ్చడి | Gongura Pachadi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Tomato Pachadi"> టమాట పచ్చడి | Tomato Pachadi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Onion Pachadi"> ఉల్లిపాయ పచ్చడి | Onion Pachadi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Dosakaya Pachadi"> దోసకాయ పచ్చడి | Dosakaya Pachadi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Pudina Pachadi"> పుదీనా పచ్చడి | Pudina Pachadi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Allam Pachadi"> అల్లం పచ్చడి | Allam Pachadi (Ginger Chutney)</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Usiri Pachadi"> ఉసిరి పచ్చడి | Usiri Pachadi (Gooseberry)</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Kobbari Pachadi"> కొబ్బరి పచ్చడి | Kobbari Pachadi (Coconut)</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Dondakaya Pachadi"> దొండకాయ పచ్చడి | Dondakaya Pachadi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Beerakaya Pachadi"> బీరకాయ పచ్చడి | Beerakaya Pachadi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Vankaya Pachadi"> వంకాయ పచ్చడి | Vankaya Pachadi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Avakaya Pachadi"> ఆవకాయ పచ్చడి | Avakaya
+                    Pachadi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Gongura Pachadi"> గోంగూర పచ్చడి | Gongura
+                    Pachadi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Tomato Pachadi"> టమాట పచ్చడి | Tomato
+                    Pachadi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Onion Pachadi"> ఉల్లిపాయ పచ్చడి | Onion
+                    Pachadi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Dosakaya Pachadi"> దోసకాయ పచ్చడి | Dosakaya
+                    Pachadi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Pudina Pachadi"> పుదీనా పచ్చడి | Pudina
+                    Pachadi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Allam Pachadi"> అల్లం పచ్చడి | Allam Pachadi
+                    (Ginger Chutney)</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Usiri Pachadi"> ఉసిరి పచ్చడి | Usiri Pachadi
+                    (Gooseberry)</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Kobbari Pachadi"> కొబ్బరి పచ్చడి | Kobbari
+                    Pachadi (Coconut)</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Dondakaya Pachadi"> దొండకాయ పచ్చడి |
+                    Dondakaya Pachadi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Beerakaya Pachadi"> బీరకాయ పచ్చడి | Beerakaya
+                    Pachadi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Vankaya Pachadi"> వంకాయ పచ్చడి | Vankaya
+                    Pachadi</label><br>
             </ul>
         </div>
         <div class="category">
@@ -229,55 +336,79 @@
             <ul>
                 <label class="li"><input class="li" type="checkbox" value="Aloo Fry"> ఆలూ వేపుడు | Aloo Fry</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Aloo 65"> ఆలూ 65 | Aloo 65</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Cabbage 65"> క్యాబేజీ 65 | Cabbage 65</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Cabbage 65"> క్యాబేజీ 65 | Cabbage
+                    65</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Paneer 65"> పనీర్ 65 | Paneer 65</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Gobi 65"> గోబీ 65 | Gobi 65</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Baby Corn 65"> బేబీకార్న్ 65 | Baby Corn 65</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mushroom Fry"> మష్రూమ్ వేపుడు | Mushroom Fry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Kanda Fry"> కంద వేపుడు | Kanda Fry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Bendakaya Fry"> బెండకాయ వేపుడు | Bendakaya Fry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Baby Corn 65"> బేబీకార్న్ 65 | Baby Corn
+                    65</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mushroom Fry"> మష్రూమ్ వేపుడు | Mushroom
+                    Fry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Kanda Fry"> కంద వేపుడు | Kanda
+                    Fry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Bendakaya Fry"> బెండకాయ వేపుడు | Bendakaya
+                    Fry</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">నాన్ వెజ్ కర్రీలు | Non-Veg Curries</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="Chicken Curry"> చికెన్ కర్రీ | Chicken Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mutton Curry"> మటన్ కర్రీ | Mutton Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Prawns Curry"> ప్రాన్స్ కర్రీ | Prawns Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Country Chicken Curry"> దేశీ చికెన్ కర్రీ | Country Chicken Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Liver Curry"> కాలేయ కర్రీ | Liver Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Boti Curry"> బోటీ కర్రీ | Boti Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mutton Keema Curry"> మటన్ కీమా కర్రీ | Mutton Keema Curry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Natukodi Pulusu"> నాటుకోడి పులుసు | Natukodi Pulusu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chicken Curry"> చికెన్ కర్రీ | Chicken
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mutton Curry"> మటన్ కర్రీ | Mutton
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Prawns Curry"> ప్రాన్స్ కర్రీ | Prawns
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Country Chicken Curry"> దేశీ చికెన్ కర్రీ |
+                    Country Chicken Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Liver Curry"> కాలేయ కర్రీ | Liver
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Boti Curry"> బోటీ కర్రీ | Boti
+                    Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mutton Keema Curry"> మటన్ కీమా కర్రీ | Mutton
+                    Keema Curry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Natukodi Pulusu"> నాటుకోడి పులుసు | Natukodi
+                    Pulusu</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Egg Curry"> ఎగ్ కర్రీ | Egg Curry</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">నాన్ వెజ్ వేపుడు వంటకాలు | Non-Veg Fries</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="Chicken Fry"> చికెన్ ఫ్రై | Chicken Fry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mutton Fry"> మటన్ ఫ్రై | Mutton Fry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Liver Fry"> కాలేయ వేపుడు | Liver Fry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chicken Fry"> చికెన్ ఫ్రై | Chicken
+                    Fry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mutton Fry"> మటన్ ఫ్రై | Mutton
+                    Fry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Liver Fry"> కాలేయ వేపుడు | Liver
+                    Fry</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Boti Fry"> బోటీ వేపుడు | Boti Fry</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Prawns Fry"> ప్రాన్స్ వేపుడు | Prawns Fry</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Prawns Fry"> ప్రాన్స్ వేపుడు | Prawns
+                    Fry</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Fish Fry"> చేపల వేపుడు | Fish Fry</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">చేపల వంటకాలు | Fish Curries</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="Chepala Pulusu"> చేపల పులుసు | Chepala Pulusu</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Chepala Iguru"> చేపల ఇగురు | Chepala Iguru</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Korameenu Pulusu"> కోరమెనూ పులుసు | Korameenu Pulusu</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Korameenu Iguru"> కోరమెనూ ఇగురు | Korameenu Iguru</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Royyala Pulusu"> రొయ్యల పులుసు | Royyala Pulusu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chepala Pulusu"> చేపల పులుసు | Chepala
+                    Pulusu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chepala Iguru"> చేపల ఇగురు | Chepala
+                    Iguru</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Korameenu Pulusu"> కోరమెనూ పులుసు | Korameenu
+                    Pulusu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Korameenu Iguru"> కోరమెనూ ఇగురు | Korameenu
+                    Iguru</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Royyala Pulusu"> రొయ్యల పులుసు | Royyala
+                    Pulusu</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">సాధారణ ఐటమ్స్ | Common Items</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="White Rice"> సాధారణ బియ్యం | White Rice</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Curd / Perugu"> పెరుగ | Curd / Perugu</label><br>
+                <label class="li"><input class="li" type="checkbox" value="White Rice"> సాధారణ బియ్యం | White
+                    Rice</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Curd / Perugu"> పెరుగ | Curd /
+                    Perugu</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Sambar"> సాంబారు | Sambar</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Rasam"> రసం | Rasam</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Chips"> చిప్స్ | Chips</label><br>
@@ -290,32 +421,47 @@
                 <label class="li"><input class="li" type="checkbox" value="Idli"> ఇడ్లీ | Idli</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Vada"> వడ | Vada</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Dosa"> దోసా | Dosa</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Ulli Dosa"> ఉల్లి దోసా | Ulli Dosa</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Ravva Dosa"> రవ్వ దోసా | Ravva Dosa</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Dhibbarotti"> ధిబ్బరోట్టి | Dhibbarotti</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Ulli Dosa"> ఉల్లి దోసా | Ulli
+                    Dosa</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Ravva Dosa"> రవ్వ దోసా | Ravva
+                    Dosa</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Dhibbarotti"> ధిబ్బరోట్టి |
+                    Dhibbarotti</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Panakam"> పనకము | Panakam</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Uthappam"> ఉత్తప్పం | Uthappam</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Pulka"> పుల్కా | Pulka</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Chapathi"> చపాతి | Chapathi</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Bajji"> బజ్జి | Bajji</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Punugu"> పునుగు | Punugu</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Aratikay Bajji"> అరటికాయ బజ్జి | Aratikay Bajji</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Mirapakay Bajji"> మిరపకాయ బజ్జి | Mirapakay Bajji</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Aratikay Bajji"> అరటికాయ బజ్జి | Aratikay
+                    Bajji</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Mirapakay Bajji"> మిరపకాయ బజ్జి | Mirapakay
+                    Bajji</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">చట్నీలు | Chutneys</h2>
             <ul>
-                <label class="li"><input class="li" type="checkbox" value="Kobbari Chutney"> కొబ్బరి చట్నీ | Kobbari Chutney</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Pudina Chutney"> పుదీన చట్నీ | Pudina Chutney</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Allam Chutney"> అల్లం చట్నీ | Allam Chutney</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Jamkaay Chutney"> జంకాయ చట్నీ | Jamkaay Chutney</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Palli Chutney"> పల్లీ చట్నీ | Palli Chutney</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Tomato Chutney"> టమాటో చట్నీ | Tomato Chutney</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Ulli Chutney"> ఉల్లిపాయ చట్నీ | Ulli Chutney</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Green Mirchi Chutney"> పచ్చి మిర్చి చట్నీ | Green Mirchi Chutney</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Chinta Chutney"> చింత చట్నీ | Chinta Chutney</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Senaga Pindi Chutney"> సెనగ పిండి చట్నీ | Senaga Pindi Chutney</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Kobbari Chutney"> కొబ్బరి చట్నీ | Kobbari
+                    Chutney</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Pudina Chutney"> పుదీన చట్నీ | Pudina
+                    Chutney</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Allam Chutney"> అల్లం చట్నీ | Allam
+                    Chutney</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Jamkaay Chutney"> జంకాయ చట్నీ | Jamkaay
+                    Chutney</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Palli Chutney"> పల్లీ చట్నీ | Palli
+                    Chutney</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Tomato Chutney"> టమాటో చట్నీ | Tomato
+                    Chutney</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Ulli Chutney"> ఉల్లిపాయ చట్నీ | Ulli
+                    Chutney</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Green Mirchi Chutney"> పచ్చి మిర్చి చట్నీ |
+                    Green Mirchi Chutney</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Chinta Chutney"> చింత చట్నీ | Chinta
+                    Chutney</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Senaga Pindi Chutney"> సెనగ పిండి చట్నీ |
+                    Senaga Pindi Chutney</label><br>
             </ul>
         </div>
         <div class="category">
@@ -324,18 +470,24 @@
                 <label class="li"><input class="li" type="checkbox" value="Coffee"> కాఫీ | Coffee</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Tea"> టీ | Tea</label><br>
                 <label class="li"><input class="li" type="checkbox" value="Masala Tea"> మసాల టీ | Masala Tea</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Brewed Tea"> బ్రూడ్ టీ | Brewed Tea</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Ginger Tea"> అల్లం టీ | Ginger Tea</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Brewed Tea"> బ్రూడ్ టీ | Brewed
+                    Tea</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Ginger Tea"> అల్లం టీ | Ginger
+                    Tea</label><br>
             </ul>
         </div>
         <div class="category">
             <h2 class="h2">పాలు & మిల్క్ ఐటమ్స్ | Milk & Milk Items</h2>
             <ul>
                 <label class="li"><input class="li" type="checkbox" value="Milk"> పాలు | Milk</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Butter Milk"> బటర్ మిల్క్ | Butter Milk</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Sweet Lassi"> స్వీట్ లస్సీ | Sweet Lassi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Salt Lassi"> సాల్ట్ లస్సీ | Salt Lassi</label><br>
-                <label class="li"><input class="li" type="checkbox" value="Milk Shake"> మిల్‌క్ షేక్ | Milk Shake</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Butter Milk"> బటర్ మిల్క్ | Butter
+                    Milk</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Sweet Lassi"> స్వీట్ లస్సీ | Sweet
+                    Lassi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Salt Lassi"> సాల్ట్ లస్సీ | Salt
+                    Lassi</label><br>
+                <label class="li"><input class="li" type="checkbox" value="Milk Shake"> మిల్‌క్ షేక్ | Milk
+                    Shake</label><br>
             </ul>
         </div>
         <div id="preview" class="category">
@@ -352,4 +504,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

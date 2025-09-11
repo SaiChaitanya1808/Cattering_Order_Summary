@@ -271,7 +271,7 @@ document.getElementById("menuForm").addEventListener("submit", function (e) {
     messageLabels[lang].village + orderData.village + "\n" +
     messageLabels[lang].address + orderData.address + "\n" +
     messageLabels[lang].event + orderData.event + "\n" +
-    messageLabels[lang].mealTimes + mealTimesText + "\n" +
+    messageLabels[lang].mealTimes + orderData.mealTimes + "\n" +
     messageLabels[lang].date + orderData.date + "\n" +
     messageLabels[lang].time + orderData.time + "\n" +
     messageLabels[lang].guests + orderData.guests + "\n" +

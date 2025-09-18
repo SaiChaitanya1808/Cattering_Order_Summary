@@ -36,7 +36,6 @@ const translations = {
       nightMeals: "Night Meals"
     },
     dateLabel: "Event Date:",
-    timeLabel: "Event Time:",
     guestsLabel: "No Of People:",
     guestsPlaceholder: "Number of Guests",
     menuLabel: "Additional Details:",
@@ -96,7 +95,6 @@ const translations = {
       nightMeals: "రాత్రి భోజనాలు"
     },
     dateLabel: "ఈవెంట్ తేదీ:",
-    timeLabel: "ఈవెంట్ సమయం:",
     guestsLabel: "అతిథుల సంఖ్య:",
     guestsPlaceholder: "అతిథుల సంఖ్య",
     menuLabel: "మెనూ ప్రాధాన్యతలు:",
@@ -166,7 +164,6 @@ function changeLanguage() {
     <option value="night-meals">${translations[lang].mealTimesOptions.nightMeals}</option>
   `;
   document.getElementById("date-label").textContent = translations[lang].dateLabel;
-  document.getElementById("time-label").textContent = translations[lang].timeLabel;
   document.getElementById("guests-label").textContent = translations[lang].guestsLabel;
   document.getElementById("guests").placeholder = translations[lang].guestsPlaceholder;
   document.getElementById("menu-label").textContent = translations[lang].menuLabel;
@@ -219,7 +216,6 @@ document.getElementById("myform").addEventListener("submit", function (e) {
   orderData.event = document.getElementById("event").value;
   orderData.mealTimes = [...document.getElementById("meal-times").selectedOptions].map(option => option.value);
   orderData.date = document.getElementById("date").value;
-  orderData.time = document.getElementById("time").value;
   orderData.guests = document.getElementById("guests").value;
   gotopage(2);
 });
@@ -245,7 +241,6 @@ document.getElementById("menuForm").addEventListener("submit", function (e) {
       event: "🎉 Event: ",
       mealTimes: "⏳ Meal Times: ",
       date: "📅 Date: ",
-      time: "⏰ Time: ",
       guests: "👥 Guests: ",
       menu: "🍽️ Menu: \n"
     },
@@ -258,7 +253,6 @@ document.getElementById("menuForm").addEventListener("submit", function (e) {
       event: "🎉 ఈవెంట్: ",
       mealTimes: "⏳ భోజన సమయాలు: ",
       date: "📅 తేదీ: ",
-      time: "⏰ సమయం: ",
       guests: "👥 అతిథులు: ",
       menu: "🍽️ మెనూ: \n"
     }
@@ -273,7 +267,6 @@ document.getElementById("menuForm").addEventListener("submit", function (e) {
     messageLabels[lang].event + orderData.event + "\n" +
     messageLabels[lang].mealTimes + orderData.mealTimes + "\n" +
     messageLabels[lang].date + orderData.date + "\n" +
-    messageLabels[lang].time + orderData.time + "\n" +
     messageLabels[lang].guests + orderData.guests + "\n" +
     messageLabels[lang].menu + orderData.menu.join("\n");
   let phoneNumber = "+919491011566";
@@ -291,7 +284,6 @@ document.getElementById("menuForm").addEventListener("submit", function (e) {
       event: "Event:",
       mealTimes: "Meal Times:",
       date: "Date:",
-      time: "Time:",
       guests: "Guests:",
       menu: "Menu:",
       success: "✔️ Your Order Was Submitted Successfully!"
@@ -304,7 +296,6 @@ document.getElementById("menuForm").addEventListener("submit", function (e) {
       event: "ఈవెంట్:",
       mealTimes: "భోజన సమయాలు:",
       date: "తేదీ:",
-      time: "సమయం:",
       guests: "అతిథులు:",
       menu: "మెనూ:",
       success: "✔️ మీ ఆర్డర్ విజయవంతంగా సమర్పించబడింది!"
@@ -318,7 +309,6 @@ document.getElementById("menuForm").addEventListener("submit", function (e) {
     <p><b>${summaryLabels[lang].event}</b> ${orderData.event}</p>
     <p><b>${summaryLabels[lang].mealTimes}</b> ${mealTimesText}</p>
     <p><b>${summaryLabels[lang].date}</b> ${orderData.date}</p>
-    <p><b>${summaryLabels[lang].time}</b> ${orderData.time}</p>
     <p><b>${summaryLabels[lang].guests}</b> ${orderData.guests}</p>
     <p><b>${summaryLabels[lang].menu}</b></p>
     <ul id="finalMenu"></ul>
